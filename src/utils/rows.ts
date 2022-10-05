@@ -1,4 +1,4 @@
-import { NewRowData, RowData } from '~/types'
+import { Level, NewRowData, RowData } from '~/types'
 
 // функция для сохранения строки
 export function saveRow(rowData: NewRowData, storage: RowData[]) {
@@ -41,12 +41,11 @@ export function recalculation(parentID: number | null, storage: RowData[]) {
     changedRows.push(rows[currentParentIndex])
 
     currentParentIndex = rows.findIndex((v) => v.id === currentParent.parent)
+    currentParent = rows[currentParentIndex]
   } while (currentParentIndex !== -1)
 
   return changedRows
 }
-
-type Level = number
 
 export const getLevel = (row: RowData): Level => {
   if (row.parent === null) {

@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { SidebarHeader } from './SidebarHeader'
 import { Dashboard } from '@mui/icons-material'
 import { GridBorderRight } from './style'
@@ -23,7 +23,13 @@ const SIDEBAR_ITEMS = [
 
 export const Sidebar = () => {
   return (
-    <GridBorderRight container item direction="column" width={234}>
+    <GridBorderRight
+      container
+      item
+      direction="column"
+      width={234}
+      flexShrink={0}
+    >
       <SidebarHeader />
       {SIDEBAR_ITEMS.map((item) => (
         <Grid
@@ -38,7 +44,7 @@ export const Sidebar = () => {
             background: item === 'СМР' ? '#A1A1AA' : 'unset',
           }}
         >
-          <Dashboard /> {item}
+          <Dashboard /> <Typography variant="body2">{item}</Typography>
         </Grid>
       ))}
     </GridBorderRight>

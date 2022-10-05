@@ -18,6 +18,11 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: ['@svgr/webpack'],
+            },
+            {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
@@ -30,7 +35,7 @@ module.exports = {
                 type: 'asset/resource',
             },
             {
-                test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+                test: /\.(woff(2)?|eot|ttf|otf|)$/,
                 type: 'asset/inline',
             },
         ],

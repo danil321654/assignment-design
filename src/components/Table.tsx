@@ -27,7 +27,7 @@ export const Table = () => {
       >
         <TableHeader />
         {parents.map((row) => (
-          <TableRow row={row} key={row.id} />
+          <TableRow editInitial row={row} key={row.id} />
         ))}
       </Grid>
     </Grid>

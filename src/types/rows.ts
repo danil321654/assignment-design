@@ -12,3 +12,5 @@ export interface NewRowData {
 export interface RowData extends NewRowData {
   id: number
 }
+
+export type Level = 1 | 2 | 3
